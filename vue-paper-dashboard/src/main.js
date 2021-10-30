@@ -46,8 +46,11 @@ import store from "./store";
 
 import VueMeta from 'vue-meta'
 import IsDemo from './isDemo'
+
+import * as config from './config/config';
 // plugin setup
 Vue.use(VueRouter)
+config.initVueApp(Vue);
 Vue.use(VueRouterPrefetch)
 Vue.use(GlobalDirectives)
 Vue.use(GlobalComponents)

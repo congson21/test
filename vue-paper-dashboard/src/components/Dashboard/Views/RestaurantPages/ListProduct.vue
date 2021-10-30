@@ -17,16 +17,13 @@
               ></el-table-column>
               <el-table-column label="Category" property="categories_name"
               ></el-table-column>
-              <el-table-column label="Status" prop="is_out_of_stock" width="200px" align="center"
+              <el-table-column label="Status" property="is_out_of_stock" width="200px" align="center"
               >
-              <!-- <template> -->
-                <el-tag v-if="is_out_of_stock" type="success">
-                  Available
-                </el-tag>
-                <el-tag v-else type="danger">
-                  Available
-                </el-tag>
-              <!-- </template> -->
+               <template slot-scope="scope">
+                <div type="success">
+                  {{ scope.row.is_out_of_stock | status }}
+                </div>
+               </template>
               </el-table-column>
 
               <el-table-column align="right" property="salary">
